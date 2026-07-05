@@ -38,9 +38,12 @@ Details + Schritt-für-Schritt-Protokoll stehen in **`DOKUMENTATION.md`**. Kurzf
 - ✅ Entities `Team` + `Driver` mit `@OneToMany`/`@ManyToOne` (+ `addDriver`, Getter/Setter)
 - ✅ `TeamRepository` (interface, `extends JpaRepository<Team, Long>`)
 - ✅ `docker-compose.yml` + `application.properties` (DB-Konfig)
-- ⏭️ **Nächstes:** Docker Desktop starten → DB hochfahren → App zum ERSTEN Mal starten.
-- ⏭️ Danach (wie in 07A/Kurs): DTOs + Mapper, Service, Controller, eigene Exception +
-  GlobalExceptionHandler, Seed-Daten, dann die 5 Tests. Siehe LB-Checkliste in `DOKUMENTATION.md`.
+- ✅ **App zum ersten Mal gestartet** (Schritt 8): Docker + DB (`f1-postgres`, Postgres 16.14) laufen,
+  Hibernate hat via `ddl-auto=update` die Tabellen `teams` + `drivers` (+ FK `team_id`) automatisch
+  angelegt, Tomcat auf Port 8080. In der DB per `\dt` gegengeprüft.
+- ⏭️ **Nächstes:** DTOs + Mapper (wie in 07A) — damit die API nicht die Entities direkt ausgibt.
+- ⏭️ Danach (wie in 07A/Kurs): Service, Controller, eigene Exception + GlobalExceptionHandler,
+  Seed-Daten, dann die 5 Tests. Siehe LB-Checkliste in `DOKUMENTATION.md`.
 
 ## Git
 Branch **`Modul-295`**, Remote `origin` = `github.com/mendrr/Modul295`. Nach jedem Block
